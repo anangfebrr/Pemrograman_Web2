@@ -14,7 +14,7 @@
 <div class="container py-4">
     <div class="row">
         <div class="col-8">
-            <h3>Situs (BO) Belanja Online</h3>
+            <h3>Situs Belanja Online</h3>
             <form method="POST">
             <div class="form-group row">
                 <label for="costumer" class="col-4 col-form-label">Costumer</label> 
