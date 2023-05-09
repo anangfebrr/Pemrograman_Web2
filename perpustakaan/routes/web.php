@@ -31,3 +31,9 @@ Route::get('/kabar', function () {
 Route::get('/nilai', function () {
     return view('nilai');
 });
+
+// Tugas Praktikum 8
+Route::get('/tes_kesehatan', function () {
+    return view('tes_kesehatan');
+});
+
