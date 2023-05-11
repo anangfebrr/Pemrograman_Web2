@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Form</title>
+    <title>Form tes kesehatan</title>
 </head>
 <body>
 
@@ -24,32 +24,32 @@
 <hr>
 
 <div>
-    <table style="border:2px solid black; padding:10px">
-        <tr style="padding:10px">
+    <table border="1">
+        <tr>
             <td>Jenis Tes</td>
             <td>Hasil Pemeriksaan</td>
             <td>Normal</td>
         </tr>
 
-        <tr style="padding:10px">
+        <tr>
             <td>Tekanan Darah</td>
             <td>110/80</td>
             <td>120/80mmhg</td>
         </tr>
 
-        <tr style="padding:10px">
+        <tr>
             <td>Asam Urat</td>
             <td>130</td>
             <td>7mg</td>
         </tr>
 
-        <tr style="padding:10px">
+        <tr>
             <td>Kolestrol Total</td>
             <td>190</td>
             <td>200mg/dl</td>
         </tr>
 
-        <tr style="padding:10px">
+        <tr>
             <td>Gula Darah</td>
             <td>90</td>
             <td>Puasa: 70-11mg/dl</td>
