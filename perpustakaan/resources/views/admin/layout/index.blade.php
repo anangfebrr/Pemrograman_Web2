@@ -1,5 +1,4 @@
 @include('admin.layout.navbar')
 @include('admin.layout.sidebar')
 @yield('content')
-@yield('table')
 @include('admin.layout.footer')

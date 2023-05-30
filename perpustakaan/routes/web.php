@@ -6,7 +6,10 @@ use App\Http\Controllers\PeminjamanController;
 
 // praktikum 10
 use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\TableController;
+use App\Http\Controllers\BookController;
+
+// praktikum 11
+use App\Http\Controllers\MemberController;
 
 /*
 |--------------------------------------------------------------------------
@@ -55,4 +58,8 @@ Route::post('/hasil-pinjam',[PeminjamanController::class, 'hasil']);
 
 // praktikum 10
 Route::get('/dashboard',[DashboardController::class, 'index']);
-Route::get('/table',[TableController::class, 'index']);
+Route::get('/book',[BookController::class, 'index']);
+
+// praktikum 11
+Route::get('/member',[MemberController::class, 'index']);
+
