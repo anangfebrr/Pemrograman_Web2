@@ -3,7 +3,7 @@
 <div class="col-lg-12 grid-margin stretch-card">
     <div class="card">
       <div class="card-body">
-        <button type="button" class="btn btn-success">+ Tambah Buku</button> 
+        <a href="{{ url('/book/create') }}" class="btn btn-success">+ Tambah Buku</a> 
         <p class="card-description">
         <h4 class="card-title">Daftar Buku Tersedia</h4>
         </p>
@@ -23,9 +23,14 @@
               <td> {{ $book->title}} </td>
               <td> {{ $book->stok}} </td>
               <td>
-                <button type="button" class="btn btn-primary">View</button>
-                <button type="button" class="btn btn-warning">Edit</button>
-                <button type="button" class="btn btn-danger">Delete</button>
+                <button type="button" class="btn btn-primary btn-sm">View</button>
+                <button type="button" class="btn btn-warning btn-sm">Edit</button>
+                <form action="{{ url('/book/destroy', $book->id) }}" method="post" class="d-inline"
+                    onclick="if(!confirm('Anda Yakin Hapus Data Buku {{ $book->title}}?')) {return false}">
+                  @csrf
+                  @method('delete')
+                  <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                </form>                
               </td>
             </tr>
             @endforeach            

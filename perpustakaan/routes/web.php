@@ -58,8 +58,19 @@ Route::post('/hasil-pinjam',[PeminjamanController::class, 'hasil']);
 
 // praktikum 10
 Route::get('/dashboard',[DashboardController::class, 'index']);
-Route::get('/book',[BookController::class, 'index']);
 
 // praktikum 11
+Route::get('/book',[BookController::class, 'index']);
 Route::get('/member',[MemberController::class, 'index']);
+
+// praktikum 12
+
+Route::get('book/create',[BookController::class, 'create']);
+Route::post('book/store',[BookController::class, 'store']);
+Route::delete('book/destroy/{id}',[BookController::class, 'destroy']);
+
+Route::get('member/create',[MemberController::class, 'create']);
+Route::post('member/store',[MemberController::class, 'store']);
+Route::delete('member/destroy/{id}',[MemberController::class, 'destroy']);
+
 

@@ -23,7 +23,7 @@ class MemberController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.member.create');
     }
 
     /**
@@ -31,7 +31,18 @@ class MemberController extends Controller
      */
     public function store(Request $request)
     {
-        //
+                // validasi form input
+                $validated = $request->validate([
+                    'name' => 'required|min:5|max:20',
+                    'email' => 'required|email',
+                    'gender' => 'required|in:Pria,Wanita',
+                    'status' => 'required',
+                    'address' => 'required'
+                ]);
+        
+                // simpan data ke dalam table books
+                member::create($validated);
+                return redirect('/member');
     }
 
     /**
@@ -63,6 +74,9 @@ class MemberController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        //mencari data berdasarkan id
+        $member = Member::find($id);
+        $member->delete();
+        return redirect('/member');
     }
 }
