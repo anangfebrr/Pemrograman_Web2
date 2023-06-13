@@ -64,7 +64,6 @@ Route::get('/book',[BookController::class, 'index']);
 Route::get('/member',[MemberController::class, 'index']);
 
 // praktikum 12
-
 Route::get('book/create',[BookController::class, 'create']);
 Route::post('book/store',[BookController::class, 'store']);
 Route::delete('book/destroy/{id}',[BookController::class, 'destroy']);
@@ -73,4 +72,11 @@ Route::get('member/create',[MemberController::class, 'create']);
 Route::post('member/store',[MemberController::class, 'store']);
 Route::delete('member/destroy/{id}',[MemberController::class, 'destroy']);
 
+// praktikum 13
+Route::get('book/edit/{id}',[BookController::class, 'edit']);
+Route::put('book/update/{id}',[BookController::class, 'update']);
+Route::get('book/show/{id}',[BookController::class, 'show']);
 
+Route::get('member/edit/{id}',[MemberController::class, 'edit']);
+Route::put('member/update/{id}',[MemberController::class, 'update']);
+Route::get('member/show/{id}',[MemberController::class, 'show']);
