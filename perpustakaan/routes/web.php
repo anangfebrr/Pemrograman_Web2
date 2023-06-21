@@ -11,6 +11,9 @@ use App\Http\Controllers\BookController;
 // praktikum 11
 use App\Http\Controllers\MemberController;
 
+// praktikum 14
+use illuminate\Support\Facades\Auth;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -57,26 +60,31 @@ Route::get('/peminjaman-buku',[PeminjamanController::class, 'index']);
 Route::post('/hasil-pinjam',[PeminjamanController::class, 'hasil']);
 
 // praktikum 10
-Route::get('/dashboard',[DashboardController::class, 'index']);
+Route::get('/dashboard',[DashboardController::class, 'index'])->middleware('auth');
 
 // praktikum 11
-Route::get('/book',[BookController::class, 'index']);
-Route::get('/member',[MemberController::class, 'index']);
+Route::get('/book',[BookController::class, 'index'])->middleware('auth');
+Route::get('/member',[MemberController::class, 'index'])->middleware('auth');
 
 // praktikum 12
-Route::get('book/create',[BookController::class, 'create']);
-Route::post('book/store',[BookController::class, 'store']);
-Route::delete('book/destroy/{id}',[BookController::class, 'destroy']);
+Route::get('book/create',[BookController::class, 'create'])->middleware('auth');
+Route::post('book/store',[BookController::class, 'store'])->middleware('auth');
+Route::delete('book/destroy/{id}',[BookController::class, 'destroy'])->middleware('auth');
 
-Route::get('member/create',[MemberController::class, 'create']);
-Route::post('member/store',[MemberController::class, 'store']);
-Route::delete('member/destroy/{id}',[MemberController::class, 'destroy']);
+Route::get('member/create',[MemberController::class, 'create'])->middleware('auth');
+Route::post('member/store',[MemberController::class, 'store'])->middleware('auth');
+Route::delete('member/destroy/{id}',[MemberController::class, 'destroy'])->middleware('auth');
 
 // praktikum 13
-Route::get('book/edit/{id}',[BookController::class, 'edit']);
-Route::put('book/update/{id}',[BookController::class, 'update']);
-Route::get('book/show/{id}',[BookController::class, 'show']);
+Route::get('book/edit/{id}',[BookController::class, 'edit'])->middleware('auth');
+Route::put('book/update/{id}',[BookController::class, 'update'])->middleware('auth');
+Route::get('book/show/{id}',[BookController::class, 'show'])->middleware('auth');
 
-Route::get('member/edit/{id}',[MemberController::class, 'edit']);
-Route::put('member/update/{id}',[MemberController::class, 'update']);
-Route::get('member/show/{id}',[MemberController::class, 'show']);
+Route::get('member/edit/{id}',[MemberController::class, 'edit'])->middleware('auth');
+Route::put('member/update/{id}',[MemberController::class, 'update'])->middleware('auth');
+Route::get('member/show/{id}',[MemberController::class, 'show'])->middleware('auth');
+
+// praktikum 14
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
